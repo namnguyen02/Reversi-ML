@@ -138,7 +138,7 @@ def select_move(rs: Reversi, nb: NaiveBayes, depth):
 X_train = []
 y_train = []
 
-with open("data.csv", newline="") as file:
+with open("train_data.csv", newline="") as file:
     reader = csv.reader(file, delimiter=",")
     for row in reader:
         X_train.append(list(map(int, row[:-1])))
