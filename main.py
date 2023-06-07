@@ -93,6 +93,10 @@ class Reversi:
     def get_score(self):
         return np.sum(self.board)
 
+    def check_game_over(self):
+        count_zero = 64 - np.count_nonzero(self.board)
+        return count_zero == 0 or not self.get_valid_moves()
+
 
 class NaiveBayes:
     def __init__(self):
