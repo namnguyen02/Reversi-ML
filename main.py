@@ -7,7 +7,7 @@ from itertools import product
 
 class Reversi:
     def __init__(self):
-        self.board = np.zeros((8, 8))
+        self.board = np.zeros((8, 8), dtype=int)
         self.board[3][3] = 1
         self.board[4][4] = 1
         self.board[3][4] = -1
