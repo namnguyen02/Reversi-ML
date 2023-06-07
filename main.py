@@ -119,7 +119,7 @@ def evaluate(rs: Reversi, nb: NaiveBayes):
 
 def negamax(rs: Reversi, nb: NaiveBayes, depth, alpha, beta):
     # if depth == 0 or rs.is_game_over():
-    if depth == 0:
+    if depth == 0 or rs.check_game_over():
         return rs.turn * evaluate(rs, nb)
     score = -np.inf
     for move in rs.get_valid_moves():
