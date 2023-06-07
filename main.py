@@ -22,9 +22,15 @@ class Reversi:
                     if di == 0 and dj == 0:
                         continue
                     ni, nj = i + di, j + dj
-                    if ni < 0 or ni >= 8 or nj < 0 or nj >= 8:
-                        continue
-                    if self.board[ni][nj] == -self.turn:
+                    if (
+                        ni >= 0
+                        and ni < 8
+                        and nj >= 0
+                        and nj < 8
+                        and self.board[ni][nj] == -self.turn
+                    ):
+                        ni += di
+                        nj += dj
                         while (
                             ni >= 0
                             and ni < 8
